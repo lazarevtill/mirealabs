@@ -11,8 +11,18 @@ int main()
 	float randomDigits_5[10]{}; // для чисел c плавающей точкой
 	int m, i{}, c{};
 	float s;
-	m = 37; i = 3; c = 64;
+	int v;
+	cout << "Введите s: ";
 	cin >> s1;
+	cout << "Введите вариант: ";
+	cin >> v;
+	if (v == 1) {
+		m = 37; i = 3; c = 64;
+	}
+	else
+	{
+		m = 25173; i = 13849; c = 65537;
+	}
 	srand(time(NULL));
 	for (int i = 0; i < 10; i++)
 	{
