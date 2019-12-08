@@ -1,16 +1,14 @@
 import numpy as np
-
-x: int
-y: int
-x = y = 0
-print("Input rows")
-x = int(input())
-print("Input columns")
-y = int(input())
-a = np.zeros(x)
-check: int
-if 1 < x < 6:
-    if 1 < y < 6:
+while True:
+    x: int
+    y: int
+    x = y = 0
+    print("Input N")
+    x = int(input())
+    y = x
+    a = np.zeros(x)
+    check: int
+    if 1 < x < 6:
         mas = np.zeros((x, y))
         print("1 if yourself input 0 if auto")
         check = int(input())
@@ -19,10 +17,13 @@ if 1 < x < 6:
             for i in range(x):
                 for j in range(y):
                     mas[i][j] = int(ord(input()))
-        else:
+        elif check== 1:
             for i in range(x):
                 for j in range(y):
                     mas[i][j] = 65 + i + j
+        else:
+            print("Wrong input")
+            break
         for i in range(x):
             for j in range(y):
                 test = mas[i][j]
@@ -32,7 +33,6 @@ if 1 < x < 6:
                     a[i] += 1
         a.sort()
         print(a)
+        exit(0)
     else:
         print("Wrong input")
-else:
-    print("Wrong input")
